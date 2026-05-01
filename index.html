@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José Fernández Tamames — Filosofía</title>
+<meta name="description" content="José Fernández Tamames. Filósofo. La Obra: tratado sistemático en diez volúmenes sobre la libertad como fundamento ontológico del ser humano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf5ea;
+    --cream-deep: #f3ecd9;
+    --ink: #1f1a14;
+    --ink-muted: #5a4f3f;
+    --burgundy: #7a1f2c;
+    --burgundy-soft: #a83f4d;
+    --rule: #d4c8a8;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.65;
+    font-feature-settings: "kern", "liga", "onum";
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 28px 120px;
+  }
+  a { color: inherit; }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 60px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 2.7rem;
+    letter-spacing: 0.02em;
+    margin: 0 0 0.5rem;
+    color: var(--ink);
+  }
+  .subtitle {
+    font-style: italic;
+    color: var(--ink-muted);
+    font-size: 1.05rem;
+    margin: 0 0 1.6rem;
+    letter-spacing: 0.02em;
+  }
+  .epigraph {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.18rem;
+    color: var(--ink);
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.45;
+  }
+  .epigraph-attr {
+    display: block;
+    font-style: normal;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-top: 14px;
+  }
+
+  /* Sections */
+  section { margin-bottom: 72px; }
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 0.82rem;
+    color: var(--burgundy);
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 400;
+    margin: 0 0 8px;
+    letter-spacing: 0.01em;
+  }
+  .section-intro {
+    text-align: center;
+    color: var(--ink-muted);
+    font-style: italic;
+    max-width: 520px;
+    margin: 0 auto 44px;
+    font-size: 1rem;
+  }
+
+  /* Volumes */
+  .volume {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .volume:last-child { border-bottom: none; }
+  .volume-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.32em;
+    color: var(--burgundy);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .volume-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0 0 4px;
+    line-height: 1.22;
+  }
+  .volume-subtitle {
+    font-style: italic;
+    color: var(--ink-muted);
+    font-size: 1rem;
+    margin: 0 0 12px;
+  }
+  .volume-desc {
+    margin: 10px 0 16px;
+    color: var(--ink);
+  }
+  .volume-meta {
+    font-size: 0.92rem;
+    color: var(--ink-muted);
+  }
+  .volume-meta a {
+    color: var(--burgundy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--burgundy-soft);
+    padding-bottom: 1px;
+    transition: color .2s, border-color .2s;
+  }
+  .volume-meta a:hover {
+    color: var(--burgundy-soft);
+    border-color: var(--burgundy);
+  }
+  .volume-meta .sep {
+    margin: 0 10px;
+    color: var(--rule);
+  }
+  .volume--upcoming {
+    text-align: center;
+    color: var(--ink-muted);
+    font-style: italic;
+    padding: 22px 0 0;
+    font-size: 1rem;
+  }
+
+  /* Articles */
+  .article-group { margin-bottom: 38px; }
+  .article-status {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--burgundy);
+    font-style: italic;
+    margin: 0 0 14px;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+  .article-status::before, .article-status::after {
+    content: "·";
+    margin: 0 14px;
+    color: var(--rule);
+    font-style: normal;
+  }
+  .article {
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .article:last-child { border-bottom: none; }
+  .article-title {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 0 0 5px;
+    font-weight: 500;
+  }
+  .article-venue {
+    font-size: 0.92rem;
+    color: var(--ink-muted);
+    font-style: italic;
+  }
+  .article-coauthor {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    margin-top: 3px;
+  }
+
+  /* Bio */
+  .bio {
+    font-size: 1.06rem;
+    line-height: 1.72;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  .bio p { margin: 0 0 1.2em; }
+  .bio p:last-child { margin-bottom: 0; }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px 28px;
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+  .contact-grid dt {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.78rem;
+    color: var(--burgundy);
+    align-self: center;
+    font-weight: 500;
+  }
+  .contact-grid dd {
+    margin: 0;
+  }
+  .contact-grid a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color .2s, border-color .2s;
+  }
+  .contact-grid a:hover {
+    color: var(--burgundy);
+    border-color: var(--burgundy);
+  }
+
+  /* Ornament */
+  .ornament {
+    text-align: center;
+    color: var(--rule);
+    font-size: 1.1rem;
+    margin: 56px 0 60px;
+    letter-spacing: 1.2em;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 88px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+  }
+  footer .colophon {
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  footer .legal {
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .container { padding: 50px 22px 80px; }
+    h1 { font-size: 2.1rem; }
+    .section-title { font-size: 1.75rem; }
+    .volume-title { font-size: 1.38rem; }
+    .epigraph { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>José Fernández Tamames</h1>
+    <p class="subtitle">Filosofía &middot; Ontología de la libertad</p>
+    <p class="epigraph">
+      «Somos libres, por tanto somos racionales —<br>no a la inversa.»
+      <span class="epigraph-attr">La Causa Primera</span>
+    </p>
+  </header>
+
+  <section id="obra">
+    <p class="section-label">Tratados</p>
+    <h2 class="section-title">La Obra</h2>
+    <p class="section-intro">
+      Sistema filosófico en diez volúmenes que repositiona la libertad — no la racionalidad — como fundamento ontológico del ser humano.
+    </p>
+
+    <div class="volume">
+      <div class="volume-number">Volumen I</div>
+      <h3 class="volume-title">La Causa Primera</h3>
+      <p class="volume-subtitle">Sinfonía filosófica en cinco movimientos con obertura</p>
+      <p class="volume-desc">
+        Tratado de ontología de urgencia frente al asedio del Nuevo Barroco Tecnológico. La libertad se establece como estructura previa a la racionalidad, articulada en la cadena: indigencia, intervalo, suspensión, evaluación, creación, firma, soberanía.
+      </p>
+      <p class="volume-meta">
+        2026 <span class="sep">·</span> 755 pp. <span class="sep">·</span>
+        <a href="https://zenodo.org/" target="_blank" rel="noopener">Zenodo</a>
+        <span class="sep">·</span>
+        <a href="https://philpapers.org/" target="_blank" rel="noopener">PhilPapers</a>
+      </p>
+    </div>
+
+    <div class="volume">
+      <div class="volume-number">Volumen II</div>
+      <h3 class="volume-title">Los Fundamentos del Conocimiento</h3>
+      <p class="volume-subtitle">Crítica de la razón indigente</p>
+      <p class="volume-desc">
+        Una deducción trascendental de inspiración kantiana invertida: en lugar de preguntar cómo son posibles los juicios sintéticos a priori, pregunta qué debe ser verdad en el agente para que pueda cometer error epistémico genuino. Edición bilingüe (español e inglés).
+      </p>
+      <p class="volume-meta">
+        2026 <span class="sep">·</span> 316 pp. <span class="sep">·</span>
+        <a href="https://zenodo.org/" target="_blank" rel="noopener">Zenodo</a>
+        <span class="sep">·</span>
+        <a href="https://philpapers.org/" target="_blank" rel="noopener">PhilPapers</a>
+      </p>
+    </div>
+
+    <div class="volume">
+      <div class="volume-number">Volumen III</div>
+      <h3 class="volume-title">Ontología del Lenguaje</h3>
+      <p class="volume-subtitle">Naturaleza, modos y límites de la palabra en la era de la inteligencia artificial</p>
+      <p class="volume-desc">
+        Investiga el lenguaje humano usando la inteligencia artificial generativa como reactivo analítico. Distingue dos clases de operaciones sobre el precipitado lingüístico: las que ocurren <em>dentro</em> del precipitado y las que sólo pueden hacerse <em>sobre</em> él desde fuera del lenguaje.
+      </p>
+      <p class="volume-meta">
+        2026 <span class="sep">·</span> 410 pp. <span class="sep">·</span>
+        <a href="https://zenodo.org/" target="_blank" rel="noopener">Zenodo</a>
+        <span class="sep">·</span>
+        <a href="https://philpapers.org/" target="_blank" rel="noopener">PhilPapers</a>
+      </p>
+    </div>
+
+    <div class="volume">
+      <div class="volume-number">Volumen IV</div>
+      <h3 class="volume-title">El Señorío Invisible</h3>
+      <p class="volume-subtitle">Poder infraestructural, agencia capturada y la política de la estructura tripartita</p>
+      <p class="volume-desc">
+        Teoría del poder infraestructural como forma de dominación específica de la era algorítmica: un poder que no prohíbe ni manda, sino que configura las condiciones dentro de las cuales los agentes ejercen su agencia. Edición bilingüe.
+      </p>
+      <p class="volume-meta">
+        2026 <span class="sep">·</span> 46 000 palabras <span class="sep">·</span>
+        <a href="https://zenodo.org/" target="_blank" rel="noopener">Zenodo</a>
+        <span class="sep">·</span>
+        <a href="https://philpapers.org/" target="_blank" rel="noopener">PhilPapers</a>
+      </p>
+    </div>
+
+    <p class="volume--upcoming">Volúmenes V–X · en preparación</p>
+  </section>
+
+  <div class="ornament">· · ·</div>
+
+  <section id="articulos">
+    <p class="section-label">Artículos académicos</p>
+    <h2 class="section-title">Papers</h2>
+
+    <div class="article-group">
+      <p class="article-status">Publicados &middot; próximos</p>
+      <div class="article">
+        <p class="article-title">Why AI Cannot Sign: Deliberative Suspension, Reflective Judgment, and the Ontological Foundations of Legal Accountability</p>
+        <p class="article-venue">Ethics and Information Technology — próxima publicación</p>
+        <p class="article-coauthor">con Susana B. Checa Prieto</p>
+      </div>
+      <div class="article">
+        <p class="article-title">La inteligencia artificial en el estado de la Ciudad del Vaticano</p>
+        <p class="article-venue">Revista Española de Derecho Canónico, 82 (199), 2025</p>
+      </div>
+      <div class="article">
+        <p class="article-title">Inteligencia artificial y la doctrina social de la Iglesia. Una aproximación integral</p>
+        <p class="article-venue">Aula Magna / McGraw Hill, 2025</p>
+      </div>
+    </div>
+
+    <div class="article-group">
+      <p class="article-status">En revisión</p>
+      <div class="article">
+        <p class="article-title">Decision Without Program: Human Indigence, the Normative Interval, and the Ontological Limits of Computationalism</p>
+        <p class="article-venue">Minds and Machines</p>
+      </div>
+      <div class="article">
+        <p class="article-title">Suspension as Ontological Operation: The Interval Between Stimulus and Response as Empirical Evidence of Ontological Liberty</p>
+        <p class="article-venue">Philosophical Problems in Science</p>
+      </div>
+    </div>
+
+    <div class="article-group">
+      <p class="article-status">Borradores · disponibles en PhilPapers y Zenodo</p>
+      <div class="article">
+        <p class="article-title">The Resistance of the Face: Ontological Finitude as the Limit of Artificial Ethics</p>
+      </div>
+      <div class="article">
+        <p class="article-title">The Weight of the Signature: Ethics and Moral Responsibility in Artificial Intelligence</p>
+      </div>
+      <div class="article">
+        <p class="article-title">The Crisis of Imputation: From the Glass Box to the Black Box in Algorithmic Decision-Making</p>
+      </div>
+      <div class="article">
+        <p class="article-title">Ontological Freedom and Its Biological Manifestation: Redefining Human Agency in the Age of AI</p>
+      </div>
+      <div class="article">
+        <p class="article-title">Original Responsibility as a Condition of Validity</p>
+      </div>
+      <div class="article">
+        <p class="article-title">From Aura to Trace: Intention Traceability and Authorship in the Generative Regime</p>
+        <p class="article-coauthor">con Susana B. Checa Prieto</p>
+      </div>
+      <div class="article">
+        <p class="article-title">Poietic Freedom: Formalizing Agency Beyond Algorithmic Optimization</p>
+      </div>
+      <div class="article">
+        <p class="article-title">Evaluation as Conjecture: Reflective Judgment and the Ontological Ground of Rational Agency</p>
+      </div>
+      <div class="article">
+        <p class="article-title">The Verification Tax: Professional Privilege, Institutional Governance, and the Limits of Generative Legal Technology</p>
+        <p class="article-coauthor">con Susana B. Checa Prieto</p>
+      </div>
+      <div class="article">
+        <p class="article-title">Metaphysics: Indigence, Truth, and the Failure of Foundations</p>
+      </div>
+      <div class="article">
+        <p class="article-title">Lenguaje, código y computación de la agencia como tecnología epistémicamente activa</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament">· · ·</div>
+
+  <section id="libros">
+    <p class="section-label">Libros</p>
+    <h2 class="section-title">Otras obras</h2>
+    <div class="volume">
+      <h3 class="volume-title">La Tercera Promesa</h3>
+      <p class="volume-subtitle">Humanismo y libertad en la Era del Algoritmo</p>
+      <p class="volume-desc">
+        Manual de resistencia para el profesional que se niega a ser un copista. Mapa para recuperar el criterio propio en un momento histórico donde la IA amenaza con disolver la soberanía individual.
+      </p>
+      <p class="volume-meta">2025 <span class="sep">·</span> Independently published (Amazon)</p>
+    </div>
+  </section>
+
+  <div class="ornament">· · ·</div>
+
+  <section id="sobre">
+    <p class="section-label">Sobre el autor</p>
+    <h2 class="section-title">Nota biográfica</h2>
+    <div class="bio">
+      <p>
+        Filósofo. Profesor en UNIE Universidad Internacional de Europa, donde ha dirigido programas en Big Data y enseña en las facultades de Derecho e Informática. Su obra desarrolla un sistema filosófico de diez volúmenes —<em>La Obra</em>— que examina la libertad como estructura ontológica anterior a la racionalidad, y la inteligencia artificial como ocasión histórica para reformular la pregunta por lo humano.
+      </p>
+      <p>
+        La distinción operativa que recorre el sistema es la de <em>Causa Primera</em> y <em>Causa Segunda</em>: agentes que originan, deliberan y firman frente a sistemas que transmiten determinación sin originarla. Sus papers académicos se publican en español e inglés, en revistas de filosofía, ética de la inteligencia artificial y filosofía del derecho.
+      </p>
+    </div>
+  </section>
+
+  <div class="ornament">· · ·</div>
+
+  <section id="contacto">
+    <p class="section-label">Contacto</p>
+    <h2 class="section-title">Coordenadas</h2>
+    <dl class="contact-grid">
+      <dt>Correo</dt>
+      <dd><a href="mailto:jose.fernandezt@universidadunie.com">jose.fernandezt@universidadunie.com</a></dd>
+      <dt>ORCID</dt>
+      <dd><a href="https://orcid.org/0009-0007-8851-9883" target="_blank" rel="noopener">0009-0007-8851-9883</a></dd>
+      <dt>PhilPapers</dt>
+      <dd><a href="https://philpapers.org/" target="_blank" rel="noopener">Perfil en PhilPapers</a></dd>
+      <dt>Zenodo</dt>
+      <dd><a href="https://zenodo.org/" target="_blank" rel="noopener">Repositorio en Zenodo</a></dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p class="colophon">Nulla dies sine linea.</p>
+    <p class="legal">© 2026 José Fernández Tamames</p>
+  </footer>
+
+</div>
+</body>
+</html>
